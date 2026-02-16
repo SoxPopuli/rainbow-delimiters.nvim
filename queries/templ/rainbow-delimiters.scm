@@ -1,5 +1,9 @@
 ; inherits: go
 
+(rawgo_block
+  "{{" @delimiter
+  "}}" @delimiter @sentinel) @container
+
 ;; HTML elements
 
 (element
@@ -29,12 +33,14 @@
     ">" @delimiter)) @container
 
 (script_element
-  ("<" @delimiter
-   "script" @delimiter
-   ">" @delimiter)
-  ("</" @delimiter
-   "script" @delimiter
-   ">" @delimiter @sentinel)) @container
+  (script_tag_start
+    "<" @delimiter
+    "script" @delimiter
+    ">" @delimiter)
+  (script_tag_end
+    "</" @delimiter
+    "script" @delimiter
+    ">" @delimiter)) @container
 
 ;; Brackets
 

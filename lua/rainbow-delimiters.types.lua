@@ -1,3 +1,5 @@
+-- SPDX-License-Identifier: Apache-2.0
+
 ---@meta
 
 --# Utility Library #--
@@ -76,6 +78,7 @@
 ---@field luadoc       (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
 ---@field make         (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
 ---@field markdown     (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
+---@field nickel       (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
 ---@field nim          (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
 ---@field nix          (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
 ---@field nu           (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
@@ -84,6 +87,7 @@
 ---@field perl         (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
 ---@field php          (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
 ---@field python       (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
+---@field qmljs        (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
 ---@field query        (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
 ---@field r            (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
 ---@field racket       (string | rainbow_delimiters.strategy | fun(bufnr: integer): string | rainbow_delimiters.strategy?)?
@@ -151,6 +155,7 @@
 ---@field luadoc       (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
 ---@field make         (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
 ---@field markdown     (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
+---@field nickel       (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
 ---@field nim          (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
 ---@field nix          (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
 ---@field nu           (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
@@ -159,6 +164,7 @@
 ---@field perl         (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
 ---@field php          (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
 ---@field python       (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
+---@field qmljs        (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
 ---@field query        (('rainbow-delimiters' | 'rainbow-blocks' | string) | fun(bufnr: integer): ('rainbow-delimiters' | 'rainbow-blocks' | string))?
 ---@field r            (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
 ---@field racket       (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
@@ -226,6 +232,7 @@
 ---@field luadoc       (integer | fun(bufnr: integer): integer)?
 ---@field make         (integer | fun(bufnr: integer): integer)?
 ---@field markdown     (integer | fun(bufnr: integer): integer)?
+---@field nickel       (integer | fun(bufnr: integer): integer)?
 ---@field nim          (integer | fun(bufnr: integer): integer)?
 ---@field nix          (integer | fun(bufnr: integer): integer)?
 ---@field nu           (integer | fun(bufnr: integer): integer)?
@@ -234,6 +241,7 @@
 ---@field perl         (integer | fun(bufnr: integer): integer)?
 ---@field php          (integer | fun(bufnr: integer): integer)?
 ---@field python       (integer | fun(bufnr: integer): integer)?
+---@field qmljs        (integer | fun(bufnr: integer): integer)?
 ---@field query        (integer | fun(bufnr: integer): integer)?
 ---@field r            (integer | fun(bufnr: integer): integer)?
 ---@field racket       (integer | fun(bufnr: integer): integer)?
@@ -299,6 +307,7 @@
 ---| 'luadoc'
 ---| 'make'
 ---| 'markdown'
+---| 'nickel'
 ---| 'nim'
 ---| 'nix'
 ---| 'nu'
@@ -307,6 +316,7 @@
 ---| 'perl'
 ---| 'php'
 ---| 'python'
+---| 'qmljs'
 ---| 'query'
 ---| 'r'
 ---| 'racket'

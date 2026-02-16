@@ -10,18 +10,62 @@ https://semver.org/
 ==============================================================================
 Unreleased
 
+------------------------------------------------------------------------------
+ADDED
+
+New languages:
+    • Nickel
+    • QML
+
+Missing patterns:
+    • Astro:
+        - `element`
+        - `style_element`
+    • C++:
+        - `decltype`
+        - `parenthesized_declarator`
+        - `sizeof_expression`
+        - `static_assert_declaration`
+        - `structured_binding_declarator`
+    • Templ:
+        - `rawgo_block`
+    • Ruby:
+        - `interpolation`
+        - `element_reference`
+        - `argument_list`
+        - `method_parameters`
+
+
+==============================================================================
+Version 0.10.0 (released on 2025-09-29)
+
 
 FIXED
 ------------------------------------------------------------------------------
 
-• Highlighting disappearing when scrolling if the language has macros (e.g. C,
-  C++, Rust)
+Highlighting disappearing when scrolling if the language has macros (e.g. C,
+C++, Rust).
+
+Replaced `verilog` with `systemverilog`.
+
+Missing patters:
+    • LaTeX:
+        - `curly_group_label`
+        - `curly_group_label_list`
+
+Fixed patterns:
+    • LaTeX:
+        - `curly_group_label` instead of `curly_group_text`
+    • Templ:
+        - Missing `script_tag_start` and `script_tag_end` nodes in
+          `script_element`
 
 
 ------------------------------------------------------------------------------
 ADDED
 
 New languages:
+    • F#
     • GLSL
     • Nu shell
     • Yuck
@@ -42,6 +86,17 @@ Missing patterns:
         - `curly_group_path_list`
         - `label_definition`
         - `math_delimiter`
+    • OCaml:
+        - `abstract_type`
+        - `function_expression`
+        - `let_expression`
+        - `let_module_expression`
+        - `let_open_expression`
+        - `package_pattern`
+        - `packed_module`
+        - `parameter`
+        - `polymorphic_variant_type`
+        - `type_binding`
     • Python:
         - `with_clause`
     • TypeScript:

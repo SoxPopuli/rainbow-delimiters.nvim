@@ -1,3 +1,5 @@
+-- SPDX-License-Identifier: Apache-2.0
+
 ---Helper script of functions which are used in highlight tests.  Do not
 ---require this file at runtime, it is only used for testing.
 local M = {}
@@ -104,7 +106,7 @@ function M.fetch_delimiters(nvim, lang, sample, query)
 	-- Neovim which has no UI.  When there is a UI the buffer will be parsed
 	-- automatically, but in an embedded context this is not guaranteed.
 	nvim:set_var('rainbow_delimiters', {query = {[''] = query}})
-	nvim:exec_lua('TSEnsure(...)', {lang})
+	nvim:exec_lua('EnsureTSParser(...)', {lang})
 	nvim:cmd({cmd = 'edit', args = {sample_file}}, {})
 	nvim:exec_lua('vim.treesitter.start()', {})
 	nvim:exec_lua('parser = vim.treesitter.get_parser()', {})
@@ -146,6 +148,10 @@ function M.record_extmarks(language, sample, query)
 				if not file then
 					error (('Could not open output file %s'):format(spec_file))
 				end
+				-- License and copyright header are hard-coded
+				file:write('-- SPDX-License-Identifier: Unlicense\n')
+				file:write('-- SPDX-FileCopyrightText: NONE\n')
+				file:write('\n')
 				file:write('return ')
 				file:write(vim.inspect(result))
 				file:close()

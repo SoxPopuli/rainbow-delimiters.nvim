@@ -1,3 +1,6 @@
+-- SPDX-License-Identifier: Unlicense
+-- SPDX-FileCopyrightText: NONE
+
 return {
   cuda = { {
       end_col = 8,
@@ -538,6 +541,18 @@ return {
       end_row = 73,
       hl_group = "RainbowDelimiterYellow",
       start_col = 11,
+      start_row = 73
+    }, {
+      end_col = 32,
+      end_row = 73,
+      hl_group = "RainbowDelimiterBlue",
+      start_col = 31,
+      start_row = 73
+    }, {
+      end_col = 36,
+      end_row = 73,
+      hl_group = "RainbowDelimiterBlue",
+      start_col = 35,
       start_row = 73
     }, {
       end_col = 37,

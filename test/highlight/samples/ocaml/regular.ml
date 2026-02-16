@@ -183,7 +183,7 @@ let x =
 let f x =
   match x with
   | [] -> 0
-  | [ x ] ->
+  | [ x ] when some_check x ->
     (match x with
      | `One -> 1
      | `Two _ -> 2)
@@ -238,3 +238,49 @@ let () =
 ;;
 
 
+(* packed_module *)
+module Test = (val M.test)
+
+(* polymorphic_variant_type *)
+let poly3 x : [ `Natural of int | `Complex of (int * int) ] = `Natural 1
+
+(* abstract_type *)
+let pp_ctyp_prim (type a) ppf : a Ctypes_primitive_types.prim -> unit =
+  fun t -> ()
+
+(* parameter *)
+let fun_with_param ~(param: 'a param) = ()
+let fun_with_param ?(param = "") = Fmt.pr "param: %s" param
+
+(* let_expression *)
+let () =
+  let+ x = 10
+  and* y = 29
+  and+ z =
+    let m = 100
+    and n = 0
+    and o = x
+    in o
+  in 
+  let rec aux i x =
+    if i = 1 then x else aux (i-1) (x*y)
+  in aux z
+  z
+;;
+
+(* let_open_expression *)
+let () =
+  let open Option in
+  ()
+
+let function_expression = function
+  | x::xs when x > 10 -> true
+  | _ -> false
+
+type ('raw_test) data = { field : string }
+
+let fn (module P: SOME_MODULE) = ()
+
+let () =
+  let module Opt = Option in
+  ()

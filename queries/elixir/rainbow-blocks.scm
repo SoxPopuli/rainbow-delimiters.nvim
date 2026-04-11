@@ -32,3 +32,7 @@
   "%" @delimiter
   "{" @delimiter
   "}" @delimiter) @container
+
+(do_block
+  "do" @delimiter
+  "end" @delimiter) @container
